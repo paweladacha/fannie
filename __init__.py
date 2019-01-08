@@ -1,4 +1,3 @@
-# LOGBOOK: aktywne/logbooki/fannie8.txt
 ''' 2do here 
 
 -> shortcuts
