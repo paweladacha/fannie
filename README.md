@@ -13,9 +13,8 @@ More important difference lays in usage. Defined "variable placeholder" can be u
 Of course *keywords argument* solve this inconvenience but some built-in functions and methods (python 3.5) does not provide this feature. 
 Also, when it comes to quick prototyping signatures sticked with 'key=value' parameters become are "too explicit".
 
-### small extension
-two @funcs defined in tools help in creation of more complex partials or "flows": *fan* and *pin*. They can be seen as two basic ways of connecting compenents in electric circuits:
-fan - parallel
-pin - sequential
-Sequential "pin" uses the output of the previous call as an input to subsequent call.
-Parallel "fan" calls all given functions with the same variable argument.
+## extension
+Two functions defined in tools help in creation of more complex partials or "flows": *fan* and *pin*.
+They can be seen as two basic ways of connecting compenents in electric circuits:
+- fan - parallel, calls all given functions with the same variable argument.
+- pin - sequential, uses the output of the previous call as an input to subsequent call.
