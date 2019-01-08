@@ -1,12 +1,3 @@
-''' 2do here:
-PROPOZYCJA
-self.f = func.f if type(func) is type(self) else func
-partial ->
-    oddzielnie lub zmodyfikowac
-    tak aby gdy dostaje func=partial
-    to self.f = func -> self.f = func.f
-
-'''
 def fan(fs,para):
     for f in fs:
         yield f(para)
@@ -49,19 +40,3 @@ class partial(object):
             fn = getattr(s.f,'__name__','')
                 or getattr(type(s.f),'__name__','')
                 or getattr(s.f, '__qualname__', str(s.f)) )
-
-
-
-if __name__ == '__main__':
-    def get(key,obj):
-        return obj[key]
-
-    a = partial(get,argph,'KUTAZ')
-    b = partial(get,obj='KUTAZ')
-    print(a)
-    print(b)
-    print(b(2))
-    print(b(1,obj='RAMBO'))
-    # print(b(1,'RAMBO'))
-    print(b(obj='RAMBO',key=2,))
-    print(a(2))
