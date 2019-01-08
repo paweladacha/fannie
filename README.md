@@ -3,7 +3,7 @@
 Simple yet very usefull implementation of partial function.
 
 ## intended use
-Day-to-day use and protyping via interpreter, ipython or Jupyter notebook.
+Day-to-day use and rapid protyping via interpreter, ipython or Jupyter notebook.
 
 ## how it works?
 Simple differences between this and *functools* implementation are mutable attributes `.f` (stores function) and `.a` (stores arguments/signature).
