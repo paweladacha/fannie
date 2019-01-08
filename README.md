@@ -40,8 +40,8 @@ sample = [1, 2, 3]
 func = lambda x:x*2
 
 
-map_mul_by_2 = partial(map, func)
-map_sample = partial(map, argph, sample)
+map_mul_by_2 = partial(map, func) # function bound
+map_sample = partial(map, argph, sample) # data bound
 
 list(map_mul_by_2(sample))        # [2,4,6]
 list(map_mul_by_2([3, 2, 1]))     # [6,4,2]
@@ -65,6 +65,9 @@ fannie.m(func)(sample)            # [2,4,6]
 ```
 
 ### fan and pin usage
+The aim here is to parse a link list in markdown 
+into a python list of dictionaries of form `{"title":"url"}`.
+
 
 ```python
 import fannie as fx
