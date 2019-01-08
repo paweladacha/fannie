@@ -8,7 +8,7 @@ Day-to-day use and protyping via interpreter, ipython or Jupyter notebook.
 ## how it works?
 Simple differences between this and *functools* implementation are mutable attributes '.f' (stores function) and '.p' (stores parameters/signature).
 
-More important difference lays in usage. Defined "variable placeholder" can be used to intuivelly and explicitlly point variable argument. In other words user can literally point with his finger wich argument should be variable.
+More important difference lays in usage. The "variable placeholder" (`argph`) can be used to intuivelly and explicitlly point variable argument. In other words user can literally point with his finger wich argument should be variable.
 
 Of course *keywords argument* solve this inconvenience but some built-in functions and methods (python 3.5) does not provide this feature. 
 Also, when it comes to quick prototyping signatures sticked with 'key=value' parameters become are "too explicit".
