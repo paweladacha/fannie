@@ -32,36 +32,37 @@ They can be seen as two basic ways of connecting compenents in electric circuits
 ### basic use of partial object
 
 ```python
-
 import fannie
 
 partial = fannie.p
+
 sample = [1, 2, 3]
 func = lambda x:x*2
 
 
-map_mul_by_2 = partial(map, func) # function bound
-map_sample = partial(map, argph, sample) # data bound
+map_mul_by_2 = partial(map, func)
+map_sample = partial(map, argph, sample)
 
-list(map_mul_by_2(sample))        # [2,4,6]
-list(map_mul_by_2([3, 2, 1]))     # [6,4,2]
-list(map_sample(func))            # [2,4,6]
-list(map_sample(lambda x: x*3))   # [3,6,9]
+list(map_mul_by_2(sample))         # [2,4,6]
+list(map_mul_by_2([3, 2, 1]))      # [6,4,2]
+list(map_sample(func))             # [2,4,6]
+list(map_sample(lambda x: x*3))    # [3,6,9]
 
 
 # some magic:
-# partial(partial,func) -> partial that returns func partial
+# partial(partial,func) -> partial that returns "func" partial
 
 map_ = partial(partial, map)
 map_mul_by_2_v2 = map_(func)
-list(map_mul_by_2_v2(sample))     # [2,4,6]
-                                  # or equivalently
-list(map_(func)(sample))          # [2,4,6]
+list(map_mul_by_2_v2(sample))      # [2,4,6]
+                                   # or equivalently
+list(map_(func)(sample))           # [2,4,6]
 
 # or without all those "list" calls obscuring this example
 # and with use of predefined solution
 
-fannie.m(func)(sample)            # [2,4,6]
+fannie.m(func)(sample)             # [2,4,6]
+
 ```
 
 ### fan and pin usage
@@ -78,23 +79,25 @@ sample = ''' - [primes](https://github.com/paweladacha/primes)
 # fx.a = fan # for array
 # fx.v = pin # for vertical
 
-get_fields = fx.p(fx.a,[
+get_fields = fx.p(fx.a, [
     lambda ar:ar[0].partition('[')[-1],
-    lambda ar:ar[1].partition(')')[0], ]) # -> generator
+    lambda ar:ar[1].partition(')')[0], ])  # -> generator
 
-get_item_dict = fx.p(fx.v,[
+get_item_dict = fx.p(fx.v, [
     get_fields,
-    lambda i:dict(zip(('title','url'),i)) ]) # -> dict
+    lambda i:dict(zip(('title', 'url'), i))])  # -> dict
 
-parse_single_item = fx.p(fx.v,[
-    fx.p(str.split,fx.x,']('),
-    get_item_dict ]) # -> dict
+parse_single_item = fx.p(fx.v, [
+    fx.p(str.split, fx.x, ']('),
+    get_item_dict])  # -> dict
 
-parse_input = fx.p(fx.v,[str.splitlines,
-    fx.p(map,parse_single_item),list]) # -> list
+parse_input = fx.p(fx.v, [str.splitlines,
+                          fx.p(map, parse_single_item), list])  # -> list
 
-parse_input(sample) # ->
+parse_input(sample)
+# ->
 # [{'title': 'primes', 'url': 'https://github.com/paweladacha/primes'},
 #  {'title': 'fannie', 'url': 'https://github.com/paweladacha/fannie'}]
+
 ```
 
