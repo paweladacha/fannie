@@ -2,12 +2,18 @@
 
 Simple yet very usefull implementation of partial function.
 
-[TOC]
+## Contents
+- [Intendet use](#intended-use)
+- [How it works?](#how-it-works)
+- [Extension](#extension)
+- [Usage examples](#usage-examples)
+    - [basic use of partial object](#basic-use-of-partial-object)
+    - [fan and pin usage](#fan-and-pin-usage)
 
-## intended use
+## Intended use
 Day-to-day use and rapid protyping via interpreter, ipython or Jupyter notebook.
 
-## how it works?
+## How it works?
 Simple differences between this and *functools* implementation are mutable attributes `.f` (stores function) and `.a` (stores arguments/signature).
 
 More important difference lays in usage. The "variable placeholder" (`argph`) can be used to intuivelly and explicitlly point variable argument. In other words user can literally point with his finger wich argument should be variable.
@@ -15,13 +21,13 @@ More important difference lays in usage. The "variable placeholder" (`argph`) ca
 Of course *keywords argument* solve this inconvenience but some built-in functions and methods (python 3.5) does not provide this feature. 
 Also, when it comes to quick prototyping signatures sticked with 'key=value' parameters become are "too explicit".
 
-## extension
+## Extension
 Two functions defined in tools help in creation of more complex partials or "flows": *fan* and *pin*.
 They can be seen as two basic ways of connecting compenents in electric circuits:
 - fan - parallel, calls all given functions with the same variable argument.
 - pin - sequential, uses the output of the previous call as an input to subsequent call.
 
-## use examples
+## Usage examples
 
 ### basic use of partial object
 
