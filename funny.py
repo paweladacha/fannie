@@ -1,3 +1,6 @@
+__all__ = ['fan','pin','argph','partial']
+''' fannie core module '''
+
 def fan(fs:[callable], para):
     ''' calls each callable in "fs" with para '''
     for f in fs:
